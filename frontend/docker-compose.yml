@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+ app:
+  build:
+   context: .
+   dockerfile: Dockerfile
+  container_name: vue-app
+  ports:
+   - "5001:5001"
+  networks:
+   - my-network
+
+networks:
+ my-network:
+  driver: bridge
